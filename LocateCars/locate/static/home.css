@@ -1,0 +1,197 @@
+
+/*////////////////TOP NAV BAR////////////////*/
+
+.top-bar{background-color:black;min-height:40px;padding-top:5px;padding-bottom: 0px;}
+.top-bar .nav-text {
+    color: #00BCD4;
+    display: block;
+    margin-top: 5px;
+}
+.top-bar .social{color:#FFF;display:inline-block;padding:5px;text-decoration: none;}
+
+.top-bar .tools{margin:0px;padding:0px;list-style-type:none;}
+.top-bar .tools li{list-style-type: none;display:inline-block;}
+.top-bar .tools li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.navbar-brand {
+    /* float: left; */
+    height: 50px;
+    padding: 3px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    position: absolute;
+    z-index: 11;
+    margin: 0 auto;
+    right: 42%;
+}
+
+
+.navbar-inverse {
+    background-color: #009688;
+    border-color: #080808;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 0px solid #000;;
+    border-radius:0px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 15px 11px;}
+
+.form-control{
+    border-color:#fff;
+    border-radius:0px;
+    background-color:transparent;
+}
+
+.btn-default-1 {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    border-radius: 0px;
+}
+
+.cart-heart a{display:inline-block;color:#fff;font-size:20px;padding:5px;}
+
+/*CROUSELE START///////////////////////////*/
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 35px;
+    width: 60%;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+@media screen and (min-width:768px){
+    .carousel-caption h3{font-size: 52px;}
+    .carousel-caption p{font-size: 32px;}
+    .carousel-caption{padding-bottom:160px;}
+}
+
+
+/*FOOTER START///////////////////*/
+
+.footer {
+    padding: 50px 0 20px 0;
+    background-color: #35404f;
+    color: #878c94;
+}
+.footer .title{text-align: left;color:#fff;font-size:25px;}
+
+
+.footer .social-icon{padding:0px;margin:0px;}
+.footer .social-icon a{display:inline-block;color:#fff;font-size:25px;padding:5px;}
+.footer .acount-icon a{display:block;color:#fff;font-size:18px;padding:5px;text-decoration:none;}
+.footer .acount-icon .fa{margin-right:25px;}
+
+
+.footer .category a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 1px;
+    border-radius:4px;
+    margin-top: 6px;
+    background-color: black;
+    border: solid 1px #fff;
+}
+
+.footer .payment{margin:0px;padding:0px;list-style-type:none}
+.footer .payment li{list-style-type:none}
+.footer .payment li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    padding: 10px 10px;
+}
+
+.index-content a:hover{
+    color:black;
+    text-decoration:none;
+}
+.index-content{
+    margin-bottom:20px;
+    padding:50px 0px;
+
+}
+.index-content .row{
+    margin-top:20px;
+}
+.index-content a{
+    color: black;
+}
+.index-content .card{
+    background-color: #FFFFFF;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+
+}
+.index-content .card:hover{
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+    color:black;
+}
+.index-content .card img{
+    width:100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.index-content .card h4{
+    margin:20px;
+}
+.index-content .card p{
+    margin:20px;
+    opacity: 0.65;
+}
+.index-content .blue-button{
+    width: 100px;
+    -webkit-transition: background-color 1s , color 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s , color 1s;
+    min-height: 20px;
+    background-color: #002E5B;
+    color: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: lighter;
+    margin: 0px 20px 15px 20px;
+    padding: 5px 0px;
+    display: inline-block;
+}
+.index-content .blue-button:hover{
+    background-color: #dadada;
+    color: #002E5B;
+}
+@media (max-width: 768px) {
+
+    .index-content .col-lg-4 {
+        margin-top: 20px;
+    }
+}

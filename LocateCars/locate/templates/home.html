@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0">
+        <title>Locator</title>
+        <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        width:70%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+	<!--<link href="css/bootstrap.css" rel="stylesheet" type="text/css">-->
+	<!--<link href="css/font-awesome.css" rel="stylesheet" type="text/css">-->
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% load static %}
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+
+        <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
+    <style>
+      .map-control {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        font-family: 'Roboto','sans-serif';
+        margin: 10px;
+        /* Hide the control initially, to prevent it from appearing
+           before the map loads. */
+        display: none;
+      }
+      /* Display the control once it is inside the map. */
+      #map .map-control { display: block; }
+
+      .selector-control {
+        font-size: 14px;
+        line-height: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    </style>
+<!------ Include the above in your HEAD tag ---------->
+    </head>
+
+<body>
+
+<nav class="navbar navbar-inverse" style="background-color:#3498DB">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+    <br>
+    <div class="rows" style="height:100%;">
+        <div class="col-md-3" style="padding:5px;">
+            <div style="border:2px solid #3498DB; padding:5px;border-radius:5%;margin:5px;">
+                {% for v in vehicle %}
+                {{v.name}}<br>
+                {{v.contact}}<br>
+                {{v.vehicle_number}}<br>
+                {{c.vehicle_status}}
+                {% endfor %}
+                {% for j in journey %}
+                <div style="background-color:#34CCDB; margin:2px;">
+                    start time : {{j.start_time}}<br>
+                </div>
+                <div style="background-color:#3498DB; margin:2px;">last_update : {{j.last_update}}<br></div>
+                <div style="background-color:#3498DB; margin:2px;">last_stoppage : {{j.last_stoppage}}</div>
+
+            </div>
+            {% endfor %}
+            <br>
+        </div>
+    <div id="map" class="col-md-9" style="border:2px solid #000000;margin-top:10px;"></div>
+        <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var marker = new google.maps.Marker({
+              position: pos,
+              map: map
+            });
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+
+      }
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKSH1QUuhtPyM0cdhTYKrqyjz5gSLkC5A&callback=initMap"
+            async defer></script>
+        </div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
